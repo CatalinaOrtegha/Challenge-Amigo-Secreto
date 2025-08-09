@@ -21,8 +21,24 @@ function agregarAmigo(){
     li.textContent = nombre;
     lista.appendChild(li);
     
+    document.getElementById('amigo').value = '';
 }
 }
 
+function sortearAmigo(){
+    if (listaNombresSorteados.length == 0) {
+        alert('No hay amigos para sortear')
+        return;
 
+    } 
+
+    let indice = Math.floor(Math.random()*listaNombresSorteados.length);
+    console.log(indice)
+
+    let amigoSecreto = listaNombresSorteados.at(indice)
+    console.log(amigoSecreto)
+
+    document.getElementById('resultado').innerHTML = amigoSecreto;
+    
+}
 
