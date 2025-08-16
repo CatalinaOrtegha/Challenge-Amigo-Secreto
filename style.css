@@ -1,11 +1,10 @@
 :root {
-    --color-primary: #4B69FD;
-    --color-secondary: #FFF9EB;
-    --color-tertiary: #C4C4C4;
-    --color-button: #fe652b;
-    --color-button-hover: #e55720;
-    --color-text: #444444;
-    --color-white: #FFFFFF;
+    --color-primary:#66E8FE;
+    --color-secondary: #FFFFFF;
+    --color-tertiary: #E4004B;
+    --color-button-hover: #ED775A;
+    --color-text: #000000;
+    --fuente-comic-sans:"Comic Sans MS", "Poppins", sans-serif;
 }
 
 /* Estilos generales */
@@ -43,7 +42,7 @@ body {
 .input-section {
     flex: 60%;
     background-color: var(--color-secondary);
-    border: 1px solid #000;
+    border: 1px solid var(--color-text);
     border-radius: 64px 64px 0 0;
     display: flex;
     flex-direction: column;
@@ -55,17 +54,17 @@ body {
 /* Títulos */
 .main-title {
     font-size: 48px;
-    font-family: "Merriweather", serif;
+    font-family: var(--fuente-comic-sans);
     font-weight: 900;
     font-style: italic;
-    color: var(--color-white);
+    color: var(--color-tertiary);
 }
 
 .section-title {
-    font-family: "Inter", serif;
+    font-family: var(--fuente-comic-sans);
     font-size: 36px;
     font-weight: 700;
-    color: var(--color-primary);
+    color: var(--color-tertiary);
     margin: 10px 0;
     text-align: center;
 }
@@ -82,7 +81,7 @@ body {
 .input-name {
     width: 100%;
     padding: 10px;
-    border: 2px solid #000;
+    border: 2px solid var(--color-tertiary);
     border-radius: 25px 0 0 25px;
     font-size: 16px;
 }
@@ -97,19 +96,19 @@ body {
     flex: 1;
     padding: 10px 15px;
     font-size: 16px;
-    border: 2px solid #333;
+    border: 2px solid var(--color-text);
     border-right: none;
     border-radius: 25px 0 0 25px;
-    font-family: "Merriweather", serif;
+    font-family: var(--fuente-comic-sans);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* Estilos de botón */
 button {
     padding: 15px 30px;
-    font-family: "Inter", sans-serif;
+    font-family: var(--fuente-comic-sans);
     font-size: 16px;
-    border: 2px solid #000;
+    border: 2px solid var(--color-primary);
     border-radius: 25px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     cursor: pointer;
@@ -118,25 +117,26 @@ button {
 .button-add {
     background-color: var(--color-tertiary);
     color: var(--color-text);
+    border: 2px solid var(--color-tertiary);
     border-radius: 0 25px 25px 0;
 }
 
 .button-add:hover {
-    background-color: #a1a1a1;
+    background-color: var(--color-button-hover);
 }
 
 /* Listas */
 ul {
     list-style-type: none;
     color: var(--color-text);
-    font-family: "Inter", sans-serif;
+    font-family: var(--fuente-comic-sans);
     font-size: 18px;
     margin: 20px 0;
 }
 
 .result-list {
     margin-top: 15px;
-    color: #05DF05;
+    color: var(--color-tertiary);
     font-size: 22px;
     font-weight: bold;
     text-align: center;
@@ -148,8 +148,8 @@ ul {
     align-items: center;
     width: 100%;
     padding: 10px 40px;
-    color: var(--color-white);
-    background-color: var(--color-button);
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
     font-size: 16px;
 }
 
@@ -172,15 +172,15 @@ ul {
   }
 
   .name-list li {
-    background-color: "#9ecdffff";
+    background-color: var(--color-secondary);
     padding: 10px 15px;
     border-radius: 10px; /* Bordes suaves */
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-    font-family: "Comic Sans MS", "Poppins", sans-serif;
+    font-family: var(--fuente-comic-sans);
     font-size: 1rem;
-    color: #000000;
+    color: var(--color-primary);
     display: inline-block;
-    border:2px solid #505fffff; /* Borde más fuerte */
+    border:2px solid var(--color-primary); /* Borde más fuerte */
     transition: transform 0.2s ease, background-color 0.2s ease;
   }
 
@@ -189,3 +189,71 @@ ul {
     background-color: #edeef1; /* Más clarito al pasar */
     cursor: pointer;
   }
+
+  @media (max-width: 600px) {
+    body {
+        flex-direction: column;
+        height: auto;
+        padding: 10px;
+  }
+  
+    .main-title {
+        font-size: 28px;
+        text-align: center;
+  }
+
+    .section-title {
+        font-size: 22px;
+        text-align: center;
+  }
+
+    .header-banner {
+        display: flex;
+        flex-direction: column; /* Imagen arriba, texto abajo */
+        justify-content: center;
+        align-items: center;
+        text-align: center; /* Centrar texto */
+        padding: 10px;
+  }
+
+  .header-banner img {
+        max-width: 80%;  /* Que no se desborde */
+        height: auto;
+        margin-bottom: 15px;
+  }
+  
+
+    .input-section {
+        border-radius: 32px 32px 0 0;
+        padding: 15px;
+  }
+
+    .input-wrapper {
+        flex-direction: column;
+        max-width: 100%;
+  }
+
+    .input-title,
+    .button-add {
+        width: 100%;
+        border-radius: 25px;
+        font-size: 14px;
+        padding: 12px;
+        margin: 5px 0;
+  }
+
+    button {
+        font-size: 14px;
+        padding: 10px 20px;
+  }
+
+    ul {
+        font-size: 16px;
+  }
+
+    .result-list {
+        font-size: 18px;
+  }
+
+  }
+  
